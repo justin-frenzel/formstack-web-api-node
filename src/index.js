@@ -633,7 +633,7 @@ FsAPI.prototype.deleteSubmission = function(submissionId, callback) {
     	throw new Error('Submission ID is required and must be numeric');
     }
     
-    this.request('submission/' + submissionId + '.json', 'DELETE', params, function(data, err) {
+    this.request('submission/' + submissionId + '.json', 'DELETE', {}, function(data, err) {
         
     	if (data && data.status == 'error') {
     		err = data;
